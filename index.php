@@ -39,9 +39,7 @@
             <li class="after after-contact"><a href="#">Contact</a></li>
             </ul>
             <div class="button-container">
-                <button class="button" type="submit">
-                    <a href="#" class="btn btn-1">Schedule Appointment</a>
-                </button>
+                <a href="#" class="btn btn-action">Schedule Appointment</a>
             </div>
         </div>
         <div class="sideNav-container">
