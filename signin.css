@@ -82,6 +82,47 @@ a {
   width:100%;
 }
 
+button {
+  display: flex;
+  padding: 12px 45px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  color: #fff;
+  font-size:12px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  transition:transform 80ms ease-in;
+  text-shadow: -0.5px 0.5px 0.75px rgba(156, 12, 179, 0.1);
+  text-align: center;
+  background-color: rgb(221, 0, 255);
+  background: linear-gradient(
+    rgba(219, 0, 252, 0.25),
+    rgb(219, 0, 252),
+    rgb(219, 0, 252),
+    rgb(219, 0, 252),
+    rgb(219, 0, 252),
+    rgb(219, 0, 252),
+    rgb(219, 0, 252),
+    rgb(219, 0, 252),
+    rgb(219, 0, 252),
+    rgb(219, 0, 252),
+    rgb(219, 0, 252),
+    rgb(219, 0, 252),
+    rgb(219, 0, 252),
+    rgb(219, 0, 252),
+    rgb(219, 0, 252),
+    rgb(219, 0, 252),
+    rgb(219, 0, 252),
+    rgba(219, 0, 252, 0.7)
+  );
+  border-width: 0.5px 2px 0.75px 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.7) rgba(255, 255, 255, 0.7) rgba(255, 255, 255, 0.7);
+  box-shadow: -1.25px 1.75px 1px rgba(63, 15, 70, 0.45);
+}
+
+/*
 button{
   border-radius: 20px;
   border:1px solid rgb(204, 23, 204);
@@ -93,6 +134,22 @@ button{
   letter-spacing:1px;
   text-transform:uppercase;
   transition:transform 80ms ease-in;
+}
+*/
+
+button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 25%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+  transition: all 650ms;
+}
+
+button:hover:before {
+  left: 100%;
 }
 
 button:active{
