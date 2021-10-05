@@ -1,6 +1,6 @@
 const nav = document.querySelector(".navbar");
 const topToNav = nav.offsetTop;
-const main = document.querySelector(".bodyWrap");
+const main = document.querySelector(".page-container");
 
 function stickyNav() {
   if (window.scrollY >= topToNav) {

@@ -17,7 +17,7 @@
   <body>
     <div class="container" id="container">
       <div class="form-container sign-in-container">
-        <form class="" action="#" method="post">
+        <form class="" action="./includes/sign.inc.php" method="post">
           <h1>Sign in</h1>
           <div class="social-container">
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -28,11 +28,11 @@
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
           <a href="#">Forgot your password?</a>
-          <button>Sign In</button>
+          <button type="submit" name="signinSubmit" class="btn-action">Sign In</button>
         </form>
       </div>
       <div class="form-container sign-up-container">
-        <form action="./includes/signup.inc.php">
+        <form action="./includes/signup.inc.php" method="post">
           <h1>Create Account</h1>
           <div class="social-container">
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -44,7 +44,7 @@
           <input type="email" name="email" placeholder="Email" />
           <input type="password" name="pwd" placeholder="Password" />
           <input type="password" name="pwdrepeat" placeholder="Repeat password" />
-          <button type="submit" name="submit">Sign Up</button>
+          <button class="btn-action" type="submit" name="signupSubmit">Sign Up</button>
         </form>
       </div>
       <div class="overlay-container">
