@@ -1,10 +1,11 @@
 <?php
 
 $serverName = "localhost";
-$dBUsername = "root";
-$dBPassword = "xt305BKJ2@Lm";
-$dBName = "lamarca_login";
+$dBUsername = "admin";
+$dBPassword = "";
+$dBName = "testDB";
 
+//Create Connection
 $conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);
 
 if (!$conn) {
