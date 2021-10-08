@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,6 +14,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet" />
   </head>
   <body>
+    <div class="container" id="container">
+      <div class="form-container sign-in-container">
+        <form class="" action="includes/signin.inc.php" method="post">
+          <h1>Sign in</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-apple"></i></a>
+          </div>
+          <span>or use your account</span>
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <a href="#">Forgot your password?</a>
+          <button type="submit" name="signinSubmit" class="btn-action">Sign In</button>
+        </form>
+      </div>
       <div class="form-container sign-up-container">
         <form action="includes/signup.inc.php" method="post">
           <h1>Create Account</h1>
