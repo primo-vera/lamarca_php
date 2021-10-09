@@ -235,7 +235,7 @@ button.ghost{
 
 /* ****************Animation******************* */
 
-/* Move sign to right  */
+/* Move signin to right  */
 .container.right-panel-active .sign-in-container {
   transform:translateX(100%);
 }
@@ -265,10 +265,13 @@ button.ghost{
   transform:translateX(20%);
 }
 
+.alert {
+  border: 1px solid red;
+}
 
-
-
-
+.error{
+  background-color:red;
+}
 
 
 

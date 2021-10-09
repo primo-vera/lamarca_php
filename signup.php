@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <div class="container" id="container">
+    <section class="container" id="container">
       <div class="form-container sign-in-container">
         <form class="" action="includes/signin.inc.php" method="post">
           <h1>Sign in</h1>
@@ -24,11 +24,11 @@
             <a href="#" class="social"><i class="fab fa-apple"></i></a>
           </div>
           <span>or use your account</span>
-          <input type="email" placeholder="Email" />
+          <input type="text" placeholder="Email" />
           <input type="password" placeholder="Password" />
           <a href="#">Forgot your password?</a>
           <button type="submit" name="signinSubmit" class="btn-action">Sign In</button>
-        </form>
+    </form>
       </div>
       <div class="form-container sign-up-container">
         <form action="includes/signup.inc.php" method="post">
@@ -44,6 +44,33 @@
           <input type="password" name="pwd" placeholder="Password" />
           <input type="password" name="pwdrepeat" placeholder="Repeat password" />
           <button class="btn-action" type="submit" name="signupSubmit">Sign Up</button>
+
+<!------------------------------------- Signup Form Messages ----------------------------------------------------------------->
+<?php
+    if (isset($_GET["error"])) {
+      if ($_GET["error"] == "emptyinput") {
+        echo "<p style='color:#ff1400;padding:10px;font-weight:350;'>Please fill in all fields!</p>";
+      }
+      else if ($_GET["error"] == "invalidname") {
+        echo "<p style='color:#ff1400;padding:10px;font-weight:350;'>Please fill in first and last name!</p>";
+      }
+      else if ($_GET["error"] == "invalidemail") {
+        echo "<p style='color:#ff1400;padding:10px;font-weight:350;''>Choose a proper email!</p>";
+      }
+      else if ($_GET["error"] == "passwordmismatch") {
+        echo "<p style='color:#ff1400;padding:10px;font-weight:350;'>Passwords do not match!</p>";
+      }
+      else if ($_GET["error"] == "emailtaken") {
+        echo "<p style='color:#ff1400;padding:10px;font-weight:350;'>Email already in use!</p>";
+      }
+      else if ($_GET["error"] == "stmtfailed") {
+        echo "<p style='color:#ff1400;padding:10px;font-weight:350;'>Something went wrong, please try again!</p>";
+      }
+      else if ($_GET["error"] == "none") {
+        echo "<p style='color:#1bc400;padding:10px;font-weight:350;'>You have signed up!</p>";
+      }
+    }
+  ?>
         </form>
       </div>
       <div class="overlay-container">
@@ -60,7 +87,8 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
     <!-- ******************************************************************************* -->
     <script src="./signin.js"></script>
   </body>

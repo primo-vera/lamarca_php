@@ -41,7 +41,7 @@
           <li class="after after-contact"><a href="#">Contact</a></li>
         </ul>
         <div class="button-container">
-          <a href="./signin.php" class="btn btn-action">Schedule Appointment</a>
+          <a href="./signup.php" class="btn btn-action">Schedule Appointment</a>
         </div>
       </div>
       <div class="backdrop"></div>
