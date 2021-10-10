@@ -26,8 +26,8 @@
           <span>or use your account</span>
           <input type="text" placeholder="Email" />
           <input type="password" placeholder="Password" />
-          <a href="#">Forgot your password?</a>
-          <button type="submit" name="signinSubmit" class="btn-action">Sign In</button>
+          <a href="#" class="password-forget">Forgot your password?</a>
+          <button type="submit" name="signinSubmit" class="btn-action signin">Sign In</button>
     </form>
       </div>
       <div class="form-container sign-up-container">
@@ -38,36 +38,36 @@
             <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
             <a href="#" class="social"><i class="fab fa-apple"></i></a>
           </div>
-          <span>or use your email for registration</span>
+          <span class="create-act">or use your email for registration</span>
           <input type="text" name="name" placeholder="Full name" />
           <input type="text" name="email" placeholder="Email" />
           <input type="password" name="pwd" placeholder="Password" />
           <input type="password" name="pwdrepeat" placeholder="Repeat password" />
-          <button class="btn-action" type="submit" name="signupSubmit">Sign Up</button>
+          <button class="btn-action signup" type="submit" name="signupSubmit">Sign Up</button>
 
 <!------------------------------------- Signup Form Messages ----------------------------------------------------------------->
 <?php
     if (isset($_GET["error"])) {
       if ($_GET["error"] == "emptyinput") {
-        echo "<p style='color:#ff1400;padding:10px;font-weight:350;'>Please fill in all fields!</p>";
+        echo "<p style='color:#ff1400;padding:5px;font-weight:375;'>Please fill in all fields!</p>";
       }
       else if ($_GET["error"] == "invalidname") {
-        echo "<p style='color:#ff1400;padding:10px;font-weight:350;'>Please fill in first and last name!</p>";
+        echo "<p style='color:#ff1400;padding:5px;font-weight:375;'>Please fill in first and last name!</p>";
       }
       else if ($_GET["error"] == "invalidemail") {
-        echo "<p style='color:#ff1400;padding:10px;font-weight:350;''>Choose a proper email!</p>";
+        echo "<p style='color:#ff1400;padding:5px;font-weight:375;''>Choose a proper email!</p>";
       }
       else if ($_GET["error"] == "passwordmismatch") {
-        echo "<p style='color:#ff1400;padding:10px;font-weight:350;'>Passwords do not match!</p>";
+        echo "<p style='color:#ff1400;padding:5px;font-weight:375;'>Passwords do not match!</p>";
       }
       else if ($_GET["error"] == "emailtaken") {
-        echo "<p style='color:#ff1400;padding:10px;font-weight:350;'>Email already in use!</p>";
+        echo "<p style='color:#ff1400;padding:5px;font-weight:375;'>Email already in use!</p>";
       }
       else if ($_GET["error"] == "stmtfailed") {
-        echo "<p style='color:#ff1400;padding:10px;font-weight:350;'>Something went wrong, please try again!</p>";
+        echo "<p style='color:#ff1400;padding:5px;font-weight:375;'>Something went wrong, please try again!</p>";
       }
       else if ($_GET["error"] == "none") {
-        echo "<p style='color:#1bc400;padding:10px;font-weight:350;'>You have signed up!</p>";
+        echo "<p style='color:#1bc400;padding:5px;font-weight:375;'>You have signed up!</p>";
       }
     }
   ?>
@@ -76,14 +76,14 @@
       <div class="overlay-container">
         <div class="overlay">
           <div class="overlay-panel overlay-left">
-            <h1>Welcome Back!</h1>
-            <p>To keep connected with us please login with your personal info</p>
-            <button class="ghost" id="signIn">Sign In</button>
+            <h1>Already Registered?</h1>
+            <p>Sign in to make an appointment</p>
+            <button class="ghost ghost-signin" id="signIn">Sign In</button>
           </div>
           <div class="overlay-panel overlay-right">
-            <h1>Hello, Friend!</h1>
-            <p>Enter your personal details and start your journey with us</p>
-            <button class="ghost" id="signUp">Sign Up</button>
+            <h1>Get Started!</h1>
+            <p>Register by clicking <span class="register">sign up </span>below</p>
+            <button class="ghost ghost-signup" id="signUp">Sign Up</button>
           </div>
         </div>
       </div>
