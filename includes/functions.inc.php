@@ -105,7 +105,7 @@ function emptyInputLogin($username, $pwd) {
 }
 
 // Function: Check that User/Email exists in dataBase and login *******************************************
-function loginUser($conn, $username, $pwd) {
+function loginUser($conn, $email, $pwd) {
     $uidExists = emailExists($conn, $email);
 
     if ($uidExists === false) {

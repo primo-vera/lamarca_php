@@ -185,12 +185,6 @@ body {
   background-color: rgb(221, 0, 255);
   background: linear-gradient(
     rgba(219, 0, 252, 0.25),
-    rgba(219, 0, 252, 0.25),
-    rgba(219, 0, 252, 0.25),
-    rgba(219, 0, 252, 0.25),
-    rgba(219, 0, 252, 0.25),
-    rgba(219, 0, 252, 0.25),
-    rgba(219, 0, 252, 0.25),
     rgb(219, 0, 252),
     rgb(219, 0, 252),
     rgb(219, 0, 252),
@@ -207,18 +201,7 @@ body {
     rgb(219, 0, 252),
     rgb(219, 0, 252),
     rgb(219, 0, 252),
-    rgba(219, 0, 252, 0.7),
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent
+    rgba(219, 0, 252, 0.7)
   );
   border-width: 0.5px 2px 0.75px 1px;
   border-style: solid;
@@ -256,18 +239,6 @@ body {
   background: linear-gradient(
     rgba(255, 255, 255, 0.5),
     rgba(255, 255, 255, 0.5),
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
     transparent,
     transparent,
     transparent,
