@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>signup/login</title>
     <link rel="icon" type="image/x-icon" href="./lamarca.ico" />
+    <link rel="stylesheet" href="./aReset.css" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./signin.css" />
     <script src="https://kit.fontawesome.com/5017c7b0a5.js" crossorigin="anonymous"></script>
@@ -28,10 +30,10 @@
           <input type="password" placeholder="Password" />
           <a href="#" class="password-forget">Forgot your password?</a>
           <button type="submit" name="signinSubmit" class="btn-action signin">Sign In</button>
-    </form>
+      </form>
       </div>
       <div class="form-container sign-up-container">
-        <form action="includes/signup.inc.php" method="post">
+        <form action="./includes/signup.inc.php" method="post">
           <h1>Create Account</h1>
           <div class="social-container">
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -39,7 +41,7 @@
             <a href="#" class="social"><i class="fab fa-apple"></i></a>
           </div>
           <span class="create-act">or use your email for registration</span>
-          <input type="text" name="name" placeholder="Full name" />
+          <input type="text" name="name" placeholder="Full name" class="invalid-name"/>
           <input type="text" name="email" placeholder="Email" />
           <input type="password" name="pwd" placeholder="Password" />
           <input type="password" name="pwdrepeat" placeholder="Repeat password" />
@@ -89,7 +91,7 @@
       </div>
     </section>
 
-    <!-- ******************************************************************************* -->
+    <!--------------------------------->
     <script src="./signin.js"></script>
   </body>
 </html>

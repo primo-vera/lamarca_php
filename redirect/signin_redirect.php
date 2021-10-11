@@ -24,7 +24,7 @@
             <a href="#" class="social"><i class="fab fa-apple"></i></a>
           </div>
           <span>or use your email for registration</span>
-          <input type="text" name="name" placeholder="Full name" />
+          <input type="text" name="name" placeholder="Full name"/>
           <input type="text" name="email" placeholder="Email" />
           <input type="password" name="pwd" placeholder="Password" />
           <input type="password" name="pwdrepeat" placeholder="Repeat password" />

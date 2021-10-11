@@ -11,17 +11,19 @@ if (isset($_POST["signupSubmit"])){
     require_once 'functions.inc.php';
     
     if (emptyInputSignup($name, $email, $pwd, $pwdRepeat) !== false) {
-        header("location: ../signup.php?error=emptyinput");
-        exit();
+       // header("location: ../redirect/signup_redirect.php?error=emptyinput&name=$name&email=$email");
+       header("location: ../redirect/signup_redirect.php?error=emptyinput&name=$name&email=$email"); 
+       exit();
     }
 
     if (invalidName($name) !== false) {
-        header("location: ../signup.php?error=invalidname");
+       
+        header("location: ../redirect/signup_redirect.php?error=invalidname&email=$email");
         exit();
     }
 
     if (invalidEmail($email) !== false) {
-        header("location: ../signup.php?error=invalidemail");
+        header("location: ../redirect/signup_redirect.php?error=invalidemail&name=$name");
         exit();
     }
 /*
@@ -31,12 +33,12 @@ if (isset($_POST["signupSubmit"])){
     }
 */
     if (pwdMatch($pwd, $pwdRepeat) !== false) {
-        header("location: ../signup.php?error=passwordmismatch");
+        header("location: ../redirect/signup_redirect.php?error=passwordmismatch&name=$name&email=$email");
         exit();
     }
 
     if (emailExists($conn, $email) !== false) {
-        header("location: ../signup.php?error=emailtaken");
+        header("location: ../redirect/signup_redirect.php?error=emailtaken&name=$name&email=$email");
         exit();
     }
 
