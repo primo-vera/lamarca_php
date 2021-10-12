@@ -18,7 +18,7 @@
   <body>
     <section class="container" id="container">
       <div class="form-container sign-in-container">
-        <form class="" action="includes/signin.inc.php" method="post">
+        <form class="" action="./includes/signin.inc.php" method="post">
           <h1>Sign in</h1>
           <div class="social-container">
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -26,10 +26,29 @@
             <a href="#" class="social"><i class="fab fa-apple"></i></a>
           </div>
           <span>or use your account</span>
-          <input type="text" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+          <input type="text" name="email" placeholder="Email" />
+          <input type="password" name="pwd" placeholder="Password" />
           <a href="#" class="password-forget">Forgot your password?</a>
           <button type="submit" name="signinSubmit" class="btn-action signin">Sign In</button>
+           <?php
+            if (isset($_GET["error"])) {
+              if ($_GET["error"] == "emptyinput") {
+                echo "<p class='input-error'>Please fill in all fields!</p>";
+              }
+                else if ($_GET["error"] == "invalidemail") {
+                echo "<p class='input-error'>Please enter a valid email!</p>";
+              }
+               else if ($_GET["error"] == "wronglogin") {
+                echo "<p class='input-error'>Email address not found in system!</p>";
+              }
+               else if ($_GET["error"] == "wrongpwd") {
+                echo "<p class='input-error'>Invalid password!</p>";
+              }
+               else if ($_GET["error"] == "none") {
+                echo "<p class='input-success'>You have signed up successfully!</p>";
+              }
+            }
+          ?>
       </form>
       </div>
       <div class="form-container sign-up-container">
@@ -50,10 +69,11 @@
 <!------------------------------------- Signup Form Messages ----------------------------------------------------------------->
 <?php
     if (isset($_GET["error"])) {
-      if ($_GET["error"] == "emptyinput") {
-        echo "<p style='color:#ff1400;padding:5px;font-weight:375;'>Please fill in all fields!</p>";
-      }
-      else if ($_GET["error"] == "invalidname") {
+      //if ($_GET["error"] == "emptyinput") {
+        //echo "<p style='color:#ff1400;padding:5px;font-weight:375;'>Please fill in all fields!</p>";
+        //}
+      //else 
+      if ($_GET["error"] == "invalidname") {
         echo "<p style='color:#ff1400;padding:5px;font-weight:375;'>Please fill in first and last name!</p>";
       }
       else if ($_GET["error"] == "invalidemail") {
@@ -63,13 +83,13 @@
         echo "<p style='color:#ff1400;padding:5px;font-weight:375;'>Passwords do not match!</p>";
       }
       else if ($_GET["error"] == "emailtaken") {
-        echo "<p style='color:#ff1400;padding:5px;font-weight:375;'>Email already in use!</p>";
+        echo "<p class='input-error'>Email already in use!</p>";
       }
       else if ($_GET["error"] == "stmtfailed") {
-        echo "<p style='color:#ff1400;padding:5px;font-weight:375;'>Something went wrong, please try again!</p>";
+        echo "<p class='input-error'>Something went wrong, please try again!</p>";
       }
       else if ($_GET["error"] == "none") {
-        echo "<p style='color:#1bc400;padding:5px;font-weight:375;'>You have signed up!</p>";
+        echo "<p class='input-success'>You have signed up!</p>";
       }
     }
   ?>

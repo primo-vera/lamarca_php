@@ -1,6 +1,6 @@
 <?php
 
-// Function: Check that all fields are complete ******************************************* 
+// Function: Check that sign-up input fields are complete ******************************************* 
 function emptyInputSignup($name, $email, $pwd, $pwdRepeat) {
     $result;
     if (empty($name) || empty($email) || empty($pwd) || empty($pwdRepeat)) {
@@ -54,7 +54,7 @@ function emailExists($conn, $email) {
     $sql = "SELECT * FROM users WHERE usersEmail = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../signup.php?error=stmtfailed");
+        header("location: ../redirect/signup.php?error=stmtfailed");
         exit();
     }
 
@@ -79,7 +79,7 @@ function createUser($conn, $name, $email, $pwd) {
     $sql = "INSERT INTO users (usersName, usersEmail, usersPwd) VALUES (?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../signup.php?error=stmtfailed");
+        header("location: ../redirect/signup.php?error=stmtfailed");
         exit();
     }
 
@@ -93,9 +93,9 @@ function createUser($conn, $name, $email, $pwd) {
 }
 
 // Function: Check that Email and Password fields are complete for login ******************************************* 
-function emptyInputLogin($username, $pwd) {
+function emptyInputLogin($email, $pwd) {
     $result;
-    if (empty($username) || empty($pwd)) {
+    if (empty($email) || empty($pwd)) {
         $result = true;
     }
     else {
@@ -105,7 +105,7 @@ function emptyInputLogin($username, $pwd) {
 }
 
 // Function: Check that User/Email exists in dataBase and login *******************************************
-function loginUser($conn, $email, $pwd) {
+function signupUser($conn, $email, $pwd) {
     $uidExists = emailExists($conn, $email);
 
     if ($uidExists === false) {
@@ -127,5 +127,42 @@ function loginUser($conn, $email, $pwd) {
         header("location ../index.php");
         exit();
     }
+}
+
+// Function: Check that sign-in input fields are complete ******************************************* 
+function emptyInputSignin($email, $pwd) {
+    $result;
+    if (empty($email) || empty($pwd)) {
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
+
+function loginUser($conn, $email, $pwd) {
+    $uidExists = emailExists($conn, $email);
+
+    if ($uidExists === false) {
+        header("location: ../redirect/signin_redirect.php?error=wronglogin");
+        exit();
+    }
+
+    $pwdHashed = $uidExists["usersPwd"];
+    $checkPwd = password_verify($pwd, $pwdHashed);
+
+    if ($checkPwd === false) {
+        header("location: ../redirect/signin_redirect.php?error=nopwdmatch");
+        exit();
+    }
+    else if ($checkPwd === true) {
+        session_start();
+        $_SESSION["userid"] = $uidExists["usersId"]; 
+        $_SESSION["useremail"] = $uidExists["usersEmail"]; 
+        header("location: ../index.php");
+        exit();
+    }
+
 }
 

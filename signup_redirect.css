@@ -121,7 +121,7 @@ button.signup {
   height: 40px;
   width: 40px;
 }
-
+/*
 .form-container input {
   background: #eee;
   border: none;
@@ -129,6 +129,12 @@ button.signup {
   margin: 0.4rem 0;
   width: 100%;
   max-width: 300px;
+}
+*/
+input:active,
+input:focus {
+  outline: none;
+  border: none;
 }
 
 button {
@@ -215,72 +221,16 @@ button:focus {
   outline: none;
 }
 
-.error {
+.input-error {
   width: 100%;
   color: rgb(255, 0, 0);
-  font-weight: bold;
+  font-weight: 500;
   font-size: 16px;
 }
 
-.success {
+.input-success {
   width: 100%;
-  color: rgb(0, 255, 21);
-  font-weight: bold;
+  color: rgb(63, 136, 69);
+  font-weight: 500;
   font-size: 16px;
 }
-
-.input-error {
-  border: 1px solid red;
-}
-
-/************************************* Mobile Devices *****************************************/
-/*@media screen and (max-width: 768px) {
-  body {
-    margin: -10px 28px 10px;
-  }
-
-  .container {
-    position: relative;
-    background: rgb(204, 23, 204);
-    background: radial-gradient(
-        to center,
-        transparent,
-        rgba(255, 0, 255, 0.1),
-        rgba(56, 26, 56, 0.3),
-        rgba(255, 0, 255, 0.8),
-        rgba(255, 0, 255, 0.8),
-        rgba(255, 0, 255, 0.8),
-        rgba(255, 0, 255, 0.8),
-        rgba(215, 2, 215, 0.9),
-        rgba(215, 2, 215, 1),
-        rgba(162, 0, 162, 0.9),
-        rgba(162, 0, 162, 1),
-        transparent,
-        transparent,
-        transparent,
-        transparent,
-        transparent,
-        transparent
-      )
-      no-repeat 0 0 / cover;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 80vw;
-    height: 100%;
-    max-height: 90vh;
-    overflow: hidden;
-  }
-
-  .form-container {
-    padding: 10rem 0;
-  }
-
-  .form-container input {
-    background: #eee;
-    border: none;
-    padding: 0.5rem 0.7rem;
-    margin: 0.4rem 0;
-    width: 100%;
-  }
-}
-*/

@@ -7,7 +7,7 @@
     <title>signup/login</title>
     <link rel="icon" type="image/x-icon" href="./lamarca.ico" />
     <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./signin.css" />
+    <link rel="stylesheet" href="../signup_redirect.css" />
     <script src="https://kit.fontawesome.com/5017c7b0a5.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,39 +15,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet" />
   </head>
   <body>
-      <div class="form-container sign-up-container">
-        <form action="includes/signup.inc.php" method="post">
-          <h1>Create Account</h1>
+    <section class="container" id="container">
+       <div class="form-container sign-in-container">
+        <form action="../includes/signin.inc.php" method="post">
+          <h1>Sign in</h1>
           <div class="social-container">
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
             <a href="#" class="social"><i class="fab fa-apple"></i></a>
           </div>
-          <span>or use your email for registration</span>
-          <input type="text" name="name" placeholder="Full name"/>
-          <input type="text" name="email" placeholder="Email" />
+          <span>or use your account</span>
+          <?php
+            if (isset($_GET["email"])) {
+              $email = $_GET["email"];
+              echo '<input type="text" name="email" placeholder="Email" value="'.$email.'" />';
+            }
+            else {
+              echo '<input type="text" name="email" placeholder="Email" />';
+            }
+          ?>
           <input type="password" name="pwd" placeholder="Password" />
-          <input type="password" name="pwdrepeat" placeholder="Repeat password" />
-          <button class="btn-action" type="submit" name="signupSubmit">Sign Up</button>
+          <a href="#">Forgot your password?</a>
+          <button type="submit" name="signinSubmit" class="btn-action button-signin">Sign In</button>
+          <?php
+            if (isset($_GET["error"])) {
+              if ($_GET["error"] == "emptyinput") {
+                echo "<p class='input-error'>Please fill in all fields!</p>";
+              }
+                else if ($_GET["error"] == "invalidemail") {
+                echo "<p class='input-error'>Please enter a valid email!</p>";
+              }
+               else if ($_GET["error"] == "wronglogin") {
+                echo "<p class='input-error'>Email address not found in system!</p>";
+              }
+               else if ($_GET["error"] == "wrongpwd") {
+                echo "<p class='input-error'>Invalid password!</p>";
+              }
+               else if ($_GET["error"] == "nopwdmatch") {
+                echo "<p class='input-error'>Invalid password!</p>";
+              }
+               else if ($_GET["error"] == "none") {
+                echo "<p class='input-success'>You have signed in!</p>";
+              }
+            }
+          ?>
         </form>
       </div>
-      <div class="overlay-container">
-        <div class="overlay">
-          <div class="overlay-panel overlay-left">
-            <h1>Get Started!</h1>
-            <p>Sign up today and begin giving your car<br />
-              the attention it deserves!</p>
-            <button class="ghost ghost-signin" id="signIn">Sign In</button>
-          </div>
-          <div class="overlay-panel overlay-right">
-            <h1>Already Registered?</h1>
-            <p>Sign in to make an appointment or access your profile.</p>
-            <button class="ghost ghost-signup" id="signUp">Sign Up</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- ******************************************************************************* -->
-    <script src="./signin.js"></script>
+    </section>
   </body>
 </html>

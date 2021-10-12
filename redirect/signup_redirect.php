@@ -27,18 +27,18 @@
         <span>or use your email for registration</span>
         <?php
           if (isset($_GET["name"])) {
-            $name = $_GET['name'];
-            echo '<input type="text" name="name" placeholder="Full name" class="fname" value="'.$name.'" />';
+            $name = $_GET["name"];
+            echo '<input type="text" name="name" placeholder="Full name" value="'.$name.'" />';
           }
           else {
-            echo '<input type="text" name="name" class="fname" placeholder="Full name" />';
+            echo '<input type="text" name="name" placeholder="Full name"  />';
           }
           if (isset($_GET["email"])) {
             $email = $_GET['email'];
-            echo '<input type="text" name="email" placeholder="Email" value="'.$email.'" />'; 
+            echo '<input type="text" name="email" placeholder="Email" value="'.$email.'"/>'; 
           }
           else {
-            echo '<input type="text" name="name" placeholder="Email" id="full-name" />';
+            echo '<input type="text" name="email" placeholder="Email" />';
           }
         ?>
         <input type="password" name="pwd" placeholder="Password" />
@@ -47,28 +47,25 @@
         <?php
           if (isset($_GET["error"])) {
             if ($_GET["error"] == "emptyinput") {
-              //echo "<p style='color:#ff1400;padding:5px;font-weight:375;'>Please fill in all fields!</p>";
-              echo "<p class='error'>Please fill in all fields!</p>";
-              echo "<form.fname style='border:red;'>";
+              echo "<p class='input-error'>Please fill in all fields!</p>";
             }
             else if ($_GET["error"] == "invalidname") {
-              //echo "<p style='color:#ff1400;padding:5px;font-weight:375;'>Please fill in first and last name!</p>";
-              echo "<p class='error'>Please fill in first and last name!</p>";
+              echo "<p class='input-error'>Please fill in first and last name!</p>";
             }
             else if ($_GET["error"] == "invalidemail") {
-              echo "<p class='error'>Choose a proper email!</p>";
+              echo "<p class='input-error'>Please enter a valid email!</p>";
             }
             else if ($_GET["error"] == "passwordmismatch") {
-              echo "<p class='error'>Passwords do not match!</p>";
+              echo "<p class='input-error'>Passwords do not match!</p>";
             }
             else if ($_GET["error"] == "emailtaken") {
-              echo "<p class='error'>Email already in use!</p>";
+              echo "<p class='input-error'>Email already in use!</p>";
             }
             else if ($_GET["error"] == "stmtfailed") {
-              echo "<p class='error'>Something went wrong, please try again!</p>";
+              echo "<p class='input-error'>Something went wrong, please try again!</p>";
             }
             else if ($_GET["error"] == "none") {
-              echo "<p class='success'>You have signed up!</p>";
+              echo "<p class='input-success'>You have signed up!</p>";
             }
           }
         ?>

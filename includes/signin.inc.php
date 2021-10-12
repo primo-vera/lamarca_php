@@ -1,22 +1,22 @@
 <?php
 
-if (isset($_POST["submit"])) {
+if (isset($_POST["signinSubmit"])) {
 
-    $username = $_POST["uid"];
+    $email = $_POST["email"];
     $pwd = $_POST["pwd"];
 
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
 
-   if (emptyInputLogin($username, $pwd) !== false) {
-        header("location: ../login.php?error=emptyinput");
+   if (emptyInputLogin($email, $pwd) !== false) {
+        header("location: ../redirect/signin_redirect.php?error=emptyinput&email=$name");
         exit();
     } 
 
-     loginUser($conn, $username, $pwd);
+     loginUser($conn, $email, $pwd);
 }
 else {
-    header("location: ../login.php");
+    header("location: ../signup.php");
     exit();
 }
    
