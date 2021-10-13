@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,6 +20,7 @@
   </head>
 <body>
   <div class="page-container">
+    
     <!-- Header -->
     <div class="header">
         <span class="header-phone">
@@ -24,6 +29,20 @@
       <div class="header-content-container">
         <a href="./index.php"><img src="./images/LM_logo.png" alt="LaMarca Detailing Services Logo" /></a>
       </div>
+    </div>
+    <div class="signup-signin">
+      <ul>
+        <?php
+          if (isset($_SESSION["useremail"])) {
+            echo "<li><a href='./profile.php'>Profile page</a></li>";
+            echo "<li><a href='./includes/logout.inc.php'>Log out</a></li>";
+          }
+          else {
+            echo "<li><a href='./redirect/signup_redirect.php'>Sign up</a></li>";
+            echo "<li><a href='./redirect/signin_redirect.php'>Sign in</a></li>";
+          }
+        ?>
+      </ul>
     </div>
     <!-- Navigation -->
     <nav class="navbar" id="navBar">

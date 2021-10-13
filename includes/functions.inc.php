@@ -141,6 +141,8 @@ function emptyInputSignin($email, $pwd) {
     return $result;
 }
 
+
+// Function: Log in user
 function loginUser($conn, $email, $pwd) {
     $uidExists = emailExists($conn, $email);
 

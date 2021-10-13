@@ -79,7 +79,8 @@ button.signup {
 
 .form-container {
   margin: 4rem;
-  background-color: #eee;
+  background-color: rgb(255, 255, 255);
+
   height: 100;
   padding: 3rem;
   width: 80%;
@@ -87,7 +88,7 @@ button.signup {
 }
 
 .form-container input {
-  background: #eee;
+  background: #ddd;
   border: none;
   padding: 0.5rem 0.7rem;
   margin: 0.4rem 0;
@@ -95,7 +96,6 @@ button.signup {
 }
 
 .form-container form {
-  background: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,7 +103,25 @@ button.signup {
   text-align: center;
   padding: 0 50px;
   height: 100%;
-  box-shadow: 0 8px 5px rgba(0, 0, 0, 0.2), -8px 8px 5px rgba(0, 0, 0, 0.2), -8px 0px 5px rgba(235, 15, 224, 0.1);
+  backdrop-filter: blur(5px);
+
+  -webkit-backdrop-filter: blur(5px);
+
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+  background-image: linear-gradient(155deg, rgba(255, 255, 255, 0.19), rgba(255, 255, 255, 0.4));
+
+  border-radius: 15px;
+
+  border-top: 2px solid rgb(108, 108, 108);
+
+  border-right: 2px solid rgb(108, 108, 108);
+
+  border-left: 2px solid rgb(108, 108, 108);
+
+  border-bottom: 2px solid rgb(108, 108, 108);
+
+  box-shadow: 0 8px 4px rgba(0, 0, 0, 0.2), -8px 8px 5px rgba(0, 0, 0, 0.2), -8px 0px 5px rgba(235, 15, 224, 0.1);
 }
 
 .social-container {

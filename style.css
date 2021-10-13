@@ -67,6 +67,36 @@ body {
   letter-spacing: 3px;
 }
 
+.signup-signin {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #222;
+  padding: 0 3rem;
+}
+
+.signup-signin ul {
+  display: flex;
+}
+
+.signup-signin li {
+  padding: 0 1em;
+}
+
+.signup-signin a {
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 6px 20px;
+  border-radius: 8px;
+}
+
+.signup-signin a:hover {
+  color: #ddd;
+  border: 1px solid #ddd;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .navbar {
   width: 100%;
   padding: 0;
